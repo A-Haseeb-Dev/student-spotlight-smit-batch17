@@ -2,3 +2,42 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    background: #ffffff;
+    scroll-behavior: smooth;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.skills span {
+    background: #f1f1f1;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 5px;
+    display: inline-block;
+}
+
+footer {
+    padding: 40px 0;
+    background: #f9f9f9;
+    text-align: center;
+}
