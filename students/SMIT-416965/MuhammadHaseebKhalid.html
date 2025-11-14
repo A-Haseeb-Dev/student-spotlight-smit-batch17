@@ -1,366 +1,414 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Single Page Portfolio</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- AOS Animation CSS -->
+    <title>Abdul Haseeb — Portfolio</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" href="MuhammadHaseebKhalid.css">
-  </head>
-  <body>
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #eef2f7, #ffffff);
+            scroll-behavior: smooth;
+        }
+
+        /* Glassmorphism */
+        .glass-card {
+            backdrop-filter: blur(14px);
+            background: rgba(255, 255, 255, 0.35);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            transition: 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Scroll to top */
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            display: none;
+            z-index: 999;
+        }
+
+        /* Navbar */
+        .navbar {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.7) !important;
+        }
+    </style>
+</head>
+
+<body>
+
     <!-- Navbar -->
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top"
-    >
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="#">Portfolio</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navMenu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navMenu">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#skills">Skills</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#projects">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#badges">Badges</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">HASEEB</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#badges">Badges</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
     <!-- Hero Section -->
-    <section
-      id="home"
-      data-aos="fade-up"
-      class="py-5"
-      style="margin-top: 80px; height: 80vh; display: flex; align-items: center"
-    >
-      <div class="container">
-        <div class="row align-items-center">
-          <!-- Left Section -->
-          <div class="col-md-6 mb-4">
-            <h1 class="fw-bold display-5">Hi, I'm Abdul Haseeb</h1>
-            <p class="lead text-muted">
-              Frontend Developer • UI/UX Enthusiast • Code Crafter
-            </p>
-            <!-- Summary -->
-            <p class="text-secondary">
-              I specialize in creating clean, modern and responsive websites
-              with smooth UI/UX experiences. I turn ideas into beautiful digital
-              interfaces with pixel-perfect precision.
-            </p>
-            <a href="#projects" class="btn btn-dark px-4 py-2"
-              >Explore My Work</a
-            >
-          </div>
+    <section id="home" class="py-5" style="margin-top:100px; min-height:90vh; display:flex; align-items:center;">
+        <div class="container">
+            <div class="row align-items-center">
 
-          <!-- Right Section -->
-          <div class="col-md-6 text-center">
-            <img
-              src="https://media.licdn.com/dms/image/v2/D4D03AQG-m6GOABipjA/profile-displayphoto-scale_200_200/B4DZgoHo8dGkAY-/0/1753019750287?e=2147483647&v=beta&t=GMR5mi-hcBkraXg5n-4gZPWg2Jk4mHlgAxOpi2CjVgc"
-              class="img-fluid rounded-4 shadow"
-              alt="profile image"
-              style="width: 20vw"
-            />
-          </div>
+                <div class="col-md-6 mb-4" data-aos="fade-right">
+                    <h1 class="fw-bold display-5">Hi, I'm Abdul Haseeb</h1>
+
+                    <p class="lead text-muted">
+                        <span id="typed"></span>
+                    </p>
+
+                    <p class="text-secondary">
+                        I specialize in creating clean, modern and responsive websites with smooth UI/UX experiences.
+                        I turn ideas into beautiful digital interfaces using HTML, CSS, JavaScript, Bootstrap, and more.
+                    </p>
+
+                    <a href="#projects" class="btn btn-dark px-4 py-2">Explore My Work</a>
+                </div>
+
+                <div class="col-md-6 text-center" data-aos="fade-left">
+                    <img src="#"
+                        class="img-fluid rounded-4 shadow" style="width: 370px; max-width:80%;" />
+                </div>
+
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- About Section -->
-    <section
-      id="about"
-      data-aos="fade-up"
-      class="py-5"
-      style="height: 50vh; display: flex; align-items: center"
-    >
-      <div class="container">
-        <div class="row align-items-center">
-          <!-- Left Image -->
-          <div class="col-md-6 text-center mb-4">
-            <img
-              src="https://via.placeholder.com/420"
-              class="img-fluid rounded-4 shadow"
-              alt="About Image"
-            />
-          </div>
+    <section id="about" class="py-5" data-aos="fade-up">
+        <div class="container">
+            <div class="row align-items-center">
 
-          <!-- Right Content -->
-          <div class="col-md-6">
-            <h2 class="fw-bold mb-3">About Me</h2>
-            <p class="text-secondary">
-              I'm a frontend developer who focuses on crafting modern UI
-              experiences with clean layouts, smooth interactions, and strong
-              attention to detail. My goal is to create digital products that
-              not only look great but also feel great to use.
-            </p>
-            <p class="text-secondary">
-              With hands-on experience in HTML, CSS, JavaScript, and Bootstrap,
-              I develop fully responsive and visually refined websites that
-              bring ideas to life.
-            </p>
-          </div>
+                <div class="col-md-6 text-center mb-4">
+                    <img src="https://via.placeholder.com/420" class="img-fluid rounded-4 shadow" />
+                </div>
+
+                <div class="col-md-6">
+                    <h2 class="fw-bold mb-3">About Me</h2>
+                    <p class="text-secondary">
+                        I'm a frontend developer passionate about creating modern UI experiences with clean layouts,
+                        smooth animations, and attention to detail.
+                    </p>
+                    <p class="text-secondary">
+                        I develop fully responsive websites using HTML, CSS, JS, Bootstrap and design clean user
+                        interfaces.
+                    </p>
+                </div>
+
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- Skills Component -->
+    <!-- Skills -->
     <section id="skills" class="py-5" data-aos="fade-up">
-      <div class="container">
-        <h2 class="fw-bold text-center mb-5">My Skills</h2>
-        <div class="row g-4">
-          <!-- Skill Card 1 -->
-          <div class="col-md-4">
-            <div class="card shadow-sm p-3 text-center">
-              <img
-                src="./Assets/HTML.png"
-                alt="HTML Badge"
-                class="mb-3"
-                style="width: 50px;"
-              />
-              <h5 class="fw-bold">HTML5</h5>
-              <p class="text-muted">
-                Structuring clean, semantic and SEO-friendly layouts.
-              </p>
-            </div>
-          </div>
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">My Skills</h2>
+            <div class="row g-4">
 
-          <!-- Skill Card 2 -->
-          <div class="col-md-4">
-            <div class="card shadow-sm p-3 text-center">
-              <img
-                src="./Assets/CSS.png"
-                alt="CSS Badge"
-                class="mb-3"
-                style="width: 50px;"
-              />
-              <h5 class="fw-bold">CSS3</h5>
-              <p class="text-muted">
-                Creating beautiful, responsive and modern UI designs.
-              </p>
-            </div>
-          </div>
+                <!-- Repeatable Skill Card -->
+                <div class="col-md-4">
+                    <div class="glass-card p-3 text-center">
+                        <img src="./Assets/HTML.png" style="width:50px;" class="mb-3" />
+                        <h5 class="fw-bold">HTML5</h5>
+                        <p class="text-muted">Clean, semantic and SEO-friendly markup.</p>
+                    </div>
+                </div>
 
-          <!-- Skill Card 3 -->
-          <div class="col-md-4">
-            <div class="card shadow-sm p-3 text-center">
-              <img
-                src="./Assets/JS.png"
-                alt="JS Badge"
-                class="mb-3"
-                style="width: 50px;"
-              />
-              <h5 class="fw-bold">JavaScript</h5>
-              <p class="text-muted">
-                Adding interactivity and dynamic UI experiences.
-              </p>
-            </div>
-          </div>
+                <div class="col-md-4">
+                    <div class="glass-card p-3 text-center">
+                        <img src="./Assets/CSS.png" style="width:50px;" class="mb-3" />
+                        <h5 class="fw-bold">CSS3</h5>
+                        <p class="text-muted">Beautiful & responsive styling.</p>
+                    </div>
+                </div>
 
-          <!-- Skill Card 4 -->
-          <div class="col-md-4">
-            <div class="card shadow-sm p-3 text-center">
-              <img
-                src="./Assets/BS.png"
-                alt="Bootstrap Badge"
-                class="mb-3"
-                style="width: 50px;"
-              />
-              <h5 class="fw-bold">Bootstrap</h5>
-              <p class="text-muted">
-                Fast, responsive layouts with powerful components.
-              </p>
-            </div>
-          </div>
+                <div class="col-md-4">
+                    <div class="glass-card p-3 text-center">
+                        <img src="./Assets/JS.png" style="width:50px;" class="mb-3" />
+                        <h5 class="fw-bold">JavaScript</h5>
+                        <p class="text-muted">Interactive and dynamic UI logic.</p>
+                    </div>
+                </div>
 
-          <!-- Skill Card 5 -->
-          <div class="col-md-4">
-            <div class="card shadow-sm p-3 text-center">
-              <img
-                src="./Assets/React.png"
-                alt="React Badge"
-                class="mb-3"
-                style="width: 50px;"
-              />
-              <h5 class="fw-bold">React</h5>
-              <p class="text-muted">
-                Building reusable UI components and scalable interfaces.
-              </p>
-            </div>
-          </div>
+                <div class="col-md-4">
+                    <div class="glass-card p-3 text-center">
+                        <img src="./Assets/BS.png" style="width:50px;" class="mb-3" />
+                        <h5 class="fw-bold">Bootstrap</h5>
+                        <p class="text-muted">Fast responsive layouts.</p>
+                    </div>
+                </div>
 
-          <!-- Skill Card 6 -->
-          <div class="col-md-4">
-            <div class="card shadow-sm p-3 text-center">
-              <img
-                src="./Assets/Next.png"
-                alt="Web Design Badge"
-                class="mb-3"
-                style="width: 50px;"
-              />
-              <h5 class="fw-bold">Web Design</h5>
-              <p class="text-muted">
-                UI/UX design principles for clean and engaging user flows.
-              </p>
-            </div>
-          </div>
+                <div class="col-md-4">
+                    <div class="glass-card p-3 text-center">
+                        <img src="./Assets/React.png" style="width:50px;" class="mb-3" />
+                        <h5 class="fw-bold">React</h5>
+                        <p class="text-muted">Reusable components and UI logic.</p>
+                    </div>
+                </div>
 
-          <!-- Skill Card 7 -->
-          <div class="col-md-4">
-            <div class="card shadow-sm p-3 text-center">
-              <img
-                src="./Assets/Node.png"
-                alt="Web Design Badge"
-                class="mb-3"
-                style="width: 160px;"
-              />
-              <h5 class="fw-bold">Web Design</h5>
-              <p class="text-muted">
-                UI/UX design principles for clean and engaging user flows.
-              </p>
-            </div>
-          </div>
+                <div class="col-md-4">
+                    <div class="glass-card p-3 text-center">
+                        <img src="./Assets/Python.png" style="width:50px;" class="mb-3" />
+                        <h5 class="fw-bold">Python</h5>
+                        <p class="text-muted">Backend & automation basics.</p>
+                    </div>
+                </div>
 
-          <!-- Skill Card 8 -->
-          <div class="col-md-4">
-            <div class="card shadow-sm p-3 text-center">
-              <img
-                src="./Assets/Express.png"
-                alt="Web Design Badge"
-                class="mb-3"
-                style="width: 50px;"
-              />
-              <h5 class="fw-bold">Web Design</h5>
-              <p class="text-muted">
-                UI/UX design principles for clean and engaging user flows.
-              </p>
             </div>
-          </div>
-
-          <!-- Skill Card 9 -->
-          <div class="col-md-4">
-            <div class="card shadow-sm p-3 text-center">
-              <img
-                src="./Assets/Python.png"
-                alt="Web Design Badge"
-                class="mb-3"
-                style="width: 50px;"
-              />
-              <h5 class="fw-bold">Web Design</h5>
-              <p class="text-muted">
-                UI/UX design principles for clean and engaging user flows.
-              </p>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
 
-    <!-- Services Component -->
-<section id="services" class="py-5" data-aos="fade-up">
-    <div class="container">
-        <h2 class="fw-bold text-center mb-5">Services</h2>
-        <div class="row g-4">
+    <!-- Services Section -->
+    <section id="services" class="py-5" data-aos="fade-up">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">Services</h2>
+            <div class="row g-4">
 
-            <!-- Service Card 1 -->
-            <div class="col-md-4">
-                <div class="card shadow-sm p-4 text-center">
-                    <img src="https://via.placeholder.com/100" class="rounded-circle mb-3" alt="Web Development">
-                    <h5 class="fw-bold">Web Development</h5>
-                    <p class="text-muted">Building responsive and modern websites with clean code.</p>
-                    <a href="#contact" class="btn btn-dark mt-2">Hire Me</a>
+                <!-- Service Card 1 -->
+                <div class="col-md-4">
+                    <div class="glass-card p-4 text-center">
+                        <img src="./Assets/WebDevelopment.png" class="rounded-circle mb-3" style="width:100px;"
+                            alt="Web Development">
+                        <h5 class="fw-bold">Web Development</h5>
+                        <p class="text-muted">Building responsive and modern websites with clean, maintainable code.</p>
+                        <a href="#contact" class="btn btn-dark mt-2">Hire Me</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Service Card 2 -->
-            <div class="col-md-4">
-                <div class="card shadow-sm p-4 text-center">
-                    <img src="https://via.placeholder.com/100" class="rounded-circle mb-3" alt="UI/UX Design">
-                    <h5 class="fw-bold">UI/UX Design</h5>
-                    <p class="text-muted">Designing intuitive and engaging user interfaces.</p>
-                    <a href="#contact" class="btn btn-dark mt-2">Hire Me</a>
+                <!-- Service Card 2 -->
+                <div class="col-md-4">
+                    <div class="glass-card p-4 text-center">
+                        <img src="./Assets/uiUx.png" class="rounded-circle mb-3" style="width:100px;"
+                            alt="UI/UX Design">
+                        <h5 class="fw-bold">UI/UX Design</h5>
+                        <p class="text-muted">Designing intuitive and engaging interfaces that users love.</p>
+                        <a href="#contact" class="btn btn-dark mt-2">Hire Me</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Service Card 3 -->
-            <div class="col-md-4">
-                <div class="card shadow-sm p-4 text-center">
-                    <img src="https://via.placeholder.com/100" class="rounded-circle mb-3" alt="Backend Development">
-                    <h5 class="fw-bold">Backend Development</h5>
-                    <p class="text-muted">Creating secure and efficient server-side applications.</p>
-                    <a href="#contact" class="btn btn-dark mt-2">Hire Me</a>
+                <!-- Service Card 3 -->
+                <div class="col-md-4">
+                    <div class="glass-card p-4 text-center">
+                        <img src="./Assets/BackendDevelopment.png" class="rounded-circle mb-3" style="width:100px;"
+                            alt="Backend Development">
+                        <h5 class="fw-bold">Backend Development</h5>
+                        <p class="text-muted">Creating secure, scalable, and efficient server-side applications.</p>
+                        <a href="#contact" class="btn btn-dark mt-2">Hire Me</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Service Card 4 -->
-            <div class="col-md-4">
-                <div class="card shadow-sm p-4 text-center">
-                    <img src="https://via.placeholder.com/100" class="rounded-circle mb-3" alt="Backend Development">
-                    <h5 class="fw-bold">Backend Development</h5>
-                    <p class="text-muted">Creating secure and efficient server-side applications.</p>
-                    <a href="#contact" class="btn btn-dark mt-2">Hire Me</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects" class="py-5" data-aos="fade-up">
+        <div class="container">
+
+            <h2 class="fw-bold text-center mb-5">My Projects</h2>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="glass-card p-3 h-100">
+                        <img src="https://via.placeholder.com/500x300" class="rounded-3 mb-3" />
+                        <h5 class="fw-bold">Portfolio Website</h5>
+                        <p class="text-muted">A complete modern portfolio.</p>
+                        <a href="#" class="btn btn-outline-dark w-100">View Project</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Service Card 5 -->
-            <div class="col-md-4">
-                <div class="card shadow-sm p-4 text-center">
-                    <img src="https://via.placeholder.com/100" class="rounded-circle mb-3" alt="Backend Development">
-                    <h5 class="fw-bold">Backend Development</h5>
-                    <p class="text-muted">Creating secure and efficient server-side applications.</p>
-                    <a href="#contact" class="btn btn-dark mt-2">Hire Me</a>
+                <div class="col-md-4">
+                    <div class="glass-card p-3 h-100">
+                        <img src="https://via.placeholder.com/500x300" class="rounded-3 mb-3" />
+                        <h5 class="fw-bold">E-Commerce UI</h5>
+                        <p class="text-muted">Responsive online shopping UI.</p>
+                        <a href="#" class="btn btn-outline-dark w-100">View Project</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Service Card 6 -->
-            <div class="col-md-4">
-                <div class="card shadow-sm p-4 text-center">
-                    <img src="https://via.placeholder.com/100" class="rounded-circle mb-3" alt="Backend Development">
-                    <h5 class="fw-bold">Backend Development</h5>
-                    <p class="text-muted">Creating secure and efficient server-side applications.</p>
-                    <a href="#contact" class="btn btn-dark mt-2">Hire Me</a>
+                <div class="col-md-4">
+                    <div class="glass-card p-3 h-100">
+                        <img src="https://via.placeholder.com/500x300" class="rounded-3 mb-3" />
+                        <h5 class="fw-bold">Landing Page Design</h5>
+                        <p class="text-muted">Modern landing page with animations.</p>
+                        <a href="#" class="btn btn-outline-dark w-100">View Project</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Badges -->
+    <section id="badges" class="py-5" data-aos="fade-up">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-5">My Achievements</h2>
+
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="glass-card p-4">
+                        <img src="https://via.placeholder.com/80" class="rounded-circle mb-3" />
+                        <h6 class="fw-bold">Frontend Mastery</h6>
+                        <p class="text-muted small">Advanced HTML/CSS certification.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="glass-card p-4">
+                        <img src="https://via.placeholder.com/80" class="rounded-circle mb-3" />
+                        <h6 class="fw-bold">JS Pro</h6>
+                        <p class="text-muted small">Completed 30 JS mini-projects.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="glass-card p-4">
+                        <img src="https://via.placeholder.com/80" class="rounded-circle mb-3" />
+                        <h6 class="fw-bold">UI/UX Designer</h6>
+                        <p class="text-muted small">Recognized for creative layouts.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-5" data-aos="fade-up">
+        <div class="container">
+
+            <h2 class="fw-bold text-center mb-5">Contact Me</h2>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="glass-card p-4">
+
+                        <form>
+                            <div class="row g-3">
+
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Name</label>
+                                    <input type="text" class="form-control rounded-3" placeholder="Your Name" />
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Email</label>
+                                    <input type="email" class="form-control rounded-3" placeholder="Your Email" />
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">Message</label>
+                                    <textarea rows="5" class="form-control rounded-3"
+                                        placeholder="Write your message..."></textarea>
+                                </div>
+
+                                <div class="col-12 text-center">
+                                    <button class="btn btn-dark px-4 py-2">Send Message</button>
+                                </div>
+
+                            </div>
+                        </form>
+
+                    </div>
                 </div>
             </div>
 
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- Footer -->
+    <footer class="text-center py-4 bg-light">
+        <h5 class="fw-bold">Abdul Haseeb</h5>
+        <p class="text-muted small">Frontend Developer • UI/UX Enthusiast</p>
 
+        <div class="mb-3">
+            <a href="#" class="mx-2 text-dark"><i class="bi bi-facebook fs-5"></i></a>
+            <a href="#" class="mx-2 text-dark"><i class="bi bi-instagram fs-5"></i></a>
+            <a href="#" class="mx-2 text-dark"><i class="bi bi-github fs-5"></i></a>
+            <a href="#" class="mx-2 text-dark"><i class="bi bi-linkedin fs-5"></i></a>
+        </div>
 
+        <p class="text-secondary small mb-0">© 2025 Abdul Haseeb — All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="btn btn-dark rounded-circle shadow">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Typed JS -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed = new Typed("#typed", {
+            strings: ["Frontend Developer", "Backend Developer", "UI/UX Enthusiast", "Problem Solver"],
+            typeSpeed: 60,
+            backSpeed: 40,
+            loop: true,
+        });
+    </script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            once: true,
+            offset: 80,
+        });
+    </script>
+
+    <!-- Scroll Top Button Script -->
+    <script>
+        const btn = document.getElementById("scrollTopBtn");
+
+        window.addEventListener("scroll", () => {
+            btn.style.display = window.scrollY > 400 ? "block" : "none";
+        });
+
+        btn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- AOS Animation JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-  </body>
+</body>
+
 </html>
